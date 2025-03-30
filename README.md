@@ -31,23 +31,3 @@ Gramática (Em BNF) aceita pelo analisador:
 <while_stmt> |
 readint ‘(‘ id ‘)’ ‘;’ |
 writeint ‘(‘ <expr> ‘)’ ‘;’
-
-<assig_stmt> ::= id ‘=’ <expr> ‘;’ | <type_decl_type>
-
-<cond_stmt> ::= if ‘(‘ <expr> ‘)’ <stmt> [ else <stmt> ]
-
-<while_stmt> ::= while ‘(‘ <expr> ‘)’ <stmt>
-
-<expr> ::= <conjunction> { ‘||’ <conjunction> }
-
-<conjunction> ::= <comparison> { ‘&&’ <comparison> }
-
-<comparison> ::= <sum> [ <relation> <sum> ] | intconst
-
-<relation> ::= “<” | “<=” | “==” | “!=” | “>” | “>=”
-
-<sum> ::= <term> { (‘+’ | ‘-’) <term> }
-
-<term> ::= <factor> { ( ‘*’ | ‘/’ ) <factor> }
-
-<factor> ::= intconst | charconst | id | ‘(‘ <expr> ‘)’
